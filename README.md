@@ -1,4 +1,4 @@
-# Real-Time Google Docs Clone with React and Socket.io
+# Google Docs Clone
 
 Welcome to the Real-Time Google Docs Clone repository! This project is a collaborative document editing application that mimics the functionality of Google Docs. Users can create, edit, and collaborate on documents in real-time.
 
