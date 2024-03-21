@@ -13,8 +13,10 @@ const io = require('socket.io')(8000, {
 })
 
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
     console.log("Connected")
+
+    await deleteEmptyDocs()
 
     socket.on("get-document", async documentId => {
         const document = await findOrCreateDocument(documentId)
@@ -43,4 +45,13 @@ const findOrCreateDocument = async(id)=>{
         _id : id,
         data : ""
     })
+}
+
+const deleteEmptyDocs = async()=>{
+    const allDocs = await Document.find()
+   const emptyDocsId = allDocs.filter(d=>d.data.ops[0].insert==='\n').map(document=>document._id)
+   emptyDocsId.forEach(async documentID=>{
+    await Document.deleteOne({_id : documentID})
+    console.log("Deleting empty document of ID : ",documentID)
+   }) 
 }
