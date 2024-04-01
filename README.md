@@ -8,6 +8,7 @@ Welcome to the Real-Time Google Docs Clone repository! This project is a collabo
 - **Document Creation and Editing:** Create new documents, edit existing ones, and observe changes in real-time.
 - **Rich Text Editing:** Support for formatting options such as bold, italic, underline, and more.
 - **Responsive Design:** Ensures a seamless experience across various devices.
+- - **Auto-delete empty docs Design:** Ensures a clean database at all times.
 
 ## Tech Stack
 
